@@ -1,6 +1,8 @@
 import React from "react";
 import { LOGO_URL } from "../utils/constants";
 const Header = () => {
+    console.log("nav rendered");
+    
     return (
       <div className="header">
         <div className="logo-container">

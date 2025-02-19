@@ -1,17 +1,32 @@
 import { resData } from "../utils/resData";
-import React from "react";
+import React, { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 const Body = () => {
-    console.log(resData);
-    
-    return (
-      <div className="body">
-        <div className="search">Search</div>
-        <div className="res-container">
-          {resData.map(res=><RestaurantCard key={res.info.id} resData={res} />)}
-        </div>
-      </div>
-    );
-  };
+    console.log("body rendered");
+  const [listOfRestaurants, setListOfRestaurants] = useState(resData);
 
-  export default Body
+  return (
+    <div className="body">
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filteredListOfRestaurants = listOfRestaurants.filter(
+              (res) => res.info.avgRating >= 4.5
+            );
+            setListOfRestaurants(filteredListOfRestaurants);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+      </div>
+      <div className="res-container">
+        {listOfRestaurants.map((res, idx) => (
+          <RestaurantCard key={idx} resData={res} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Body;
