@@ -1,0 +1,2 @@
+export const CDN_URL = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/`
+export const LOGO_URL = "https://dvm9jp3urcf0o.cloudfront.net/logo-ideas/business-logo-ideas/Pro/food-delivery-business.png"
